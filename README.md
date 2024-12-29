@@ -1,84 +1,63 @@
-# Retail Reviews Classification with Llama 3.1 70B on SageMaker
+# Retail Reviews Classifier with Hugging Face Llama on SageMaker  
 
-This repository contains a SageMaker-compatible Jupyter Notebook (`ipynb`) for classifying retail customer reviews using the Hugging Face integration with the **Llama 3.1 70B model**. This script is designed to be user-friendly for anyone familiar with SageMaker Studio. It performs sentiment classification based on `Comment` and `Score` fields in a reviews dataset and outputs a processed CSV file.
+This repository contains a Jupyter Notebook (`retail_reviews_classification.ipynb`) designed to classify customer reviews for a retail company. The solution leverages the powerful **Hugging Face Llama 3.1 70B Instruct** model, integrated with **Amazon SageMaker**, for high-performance large language model (LLM) inference.  
 
----
-
-## **Quick Start Guide**
-
-### Prerequisites
-
-Before running the code, ensure you have:
-- Access to **Amazon SageMaker Studio**.
-- Permissions for **ml.g6.48xlarge** instance type (or similar high-performance instances).
-- A `.csv` file containing customer reviews with the fields:
-  - **`Comment`** (required): The review text.
-  - **`Score`** (required): Numeric rating associated with the review.
-
-Other fields in the CSV are ignored by this script but can be present.
+## Features  
+- Classify customer reviews based on predefined labels.  
+- Integration with Hugging Face and SageMaker.  
+- Outputs a processed CSV containing analysis results for further use.  
 
 ---
 
-### **Steps to Use**
+## Prerequisites  
 
-1. **Set Up Your SageMaker Environment**
-   - Ensure you have an AWS account with permissions to create SageMaker resources.
-   - Create or select a **domain** and **user profile** within SageMaker.
+Before running this project, ensure the following:  
 
-2. **Launch SageMaker Studio**
-   - Log into SageMaker Studio from your AWS Management Console.
+1. **Hugging Face Setup:**  
+   - Create a Hugging Face account.  
+   - Obtain an API token.  
+   - Request access to the **Llama 3.1 70B Instruct model** [here](https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct).  
 
-3. **Upload Necessary Files**
-   - Upload the `.ipynb` file from this repository into SageMaker Studio.
-   - Upload your reviews dataset CSV (with `Comment` and `Score` fields) into SageMaker Studio.
+2. **AWS SageMaker Setup:**  
+   - Ensure you have an AWS account with access to SageMaker Studio.  
+   - Request access to the `ml.g6.48xlarge` instance type.
 
-4. **Install Required Libraries**
-   - Use the `pip install` commands provided at the top of the notebook to set up the required environment.
-
-5. **Run the Notebook**
-   - Execute the cells in sequence:
-     - The notebook will load your dataset, classify the reviews using the Llama 3.1 model, and save the processed results as a new CSV file.
-     - The output CSV will be available in the file system panel to the left of your SageMaker Studio interface.
-
-6. **Download the Processed CSV**
-   - Locate the output file in the SageMaker file browser.
-   - Download it to your local machine for further analysis.
-
-7. **Clean Up Resources**
-   - **Run the cleanup code at the bottom of the notebook!**
-     - This will delete the deployed model and endpoint to prevent unnecessary charges.
-   - **Terminate the SageMaker kernel**:
-     - Follow the instructions in the code comments to stop the running kernel.
+3. **Input Data:**  
+   - Prepare a CSV file containing customer reviews.  
+   - The file must include the following fields:  
+     - `Comment` (the review text).  
+     - `Score` (numerical rating).  
+   - Additional fields are optional but won’t impact the script’s functionality.  
 
 ---
 
-### **Important Notes on Cost Management**
+## Instructions  
 
-- The `ml.g6.48xlarge` instance type is resource-intensive. Be mindful of your runtime.
-- Ensure you **delete the endpoint and model** after running the notebook. The cleanup steps are provided in the notebook and must be executed to avoid incurring extra costs.
-- Also **delete the kernel** is when you're done. See commented instructions at bottom of notebook. This must also be executed to avoid extra costs.
+1. **SageMaker Studio Preparation:**  
+   - Log into SageMaker Studio.  
+   - Upload the following files to your SageMaker environment:  
+     - `retail_reviews_classification.ipynb` (this notebook).  
+     - Your reviews CSV file.  
+
+2. **Environment Setup:**  
+   - Open the notebook in SageMaker Studio.  
+   - Install required dependencies by running the `pip install` commands at the top of the notebook.  
+
+3. **Model Inference:**  
+   - Run the notebook's step-by-step code to classify reviews.  
+   - The script will generate a processed CSV file with classification results in your file system (visible in the left panel of SageMaker Studio).  
+
+4. **Download Processed Results:**  
+   - Download the generated CSV to your local machine for further use or analysis.  
+
+5. **Cost Management (VERY IMPORTANT):**  
+   - At the end of your session, **run the cleanup code** provided in the notebook to delete the deployed model and endpoint.  
+   - **Stop the running kernel**.  See the commented instructions at the bottom of the ipynb file.
+   - These steps are crucial to control AWS costs!!
 
 ---
 
-### Example Output
+## License  
 
-The processed CSV will contain:
-- The original fields (`Comment`, `Score`, etc.).
-- Additional classification results, such as sentiment labels.
-
----
-
-### **Troubleshooting**
-
-If you encounter any issues:
-- Check your AWS permissions for SageMaker resource creation.
-- Ensure your CSV file has the required fields (`Comment` and `Score`).
-- Review the error messages in the SageMaker Studio logs for more details.
-
----
-
-### **License**
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute this code.
-
+This project is licensed under the [MIT License](LICENSE).  
 
