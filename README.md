@@ -56,7 +56,7 @@ Other fields in the CSV are ignored by this script but can be present.
 
 - The `ml.g6.48xlarge` instance type is resource-intensive. Be mindful of your runtime.
 - Ensure you **delete the endpoint and model** after running the notebook. The cleanup steps are provided in the notebook and must be executed to avoid incurring extra costs.
-- Double-check that the kernel is stopped when you're done.
+- Also **delete the kernel** is when you're done. See commented instructions at bottom of notebook. This must also be executed to avoid extra costs.
 
 ---
 
