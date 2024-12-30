@@ -1,6 +1,6 @@
 # Retail Reviews Classifier with Hugging Face Llama on SageMaker  
 
-This repository contains a Jupyter Notebook (`retail_reviews_classification.ipynb`) designed to classify customer reviews for a retail company. The solution leverages the powerful **Hugging Face Llama 3.1 70B Instruct** model, integrated with **Amazon SageMaker**, for high-performance large language model (LLM) inference.  
+This repository contains a Jupyter Notebook (`retail_reviews_classification.ipynb`) designed to classify customer reviews for a retail company. The solution leverages the powerful **Hugging Face Llama 3.3 70B Instruct** model, integrated with **Amazon SageMaker**, for high-performance large language model (LLM) inference.  
 
 ## Features  
 - Classify customer reviews based on predefined labels.  
@@ -16,7 +16,7 @@ Before running this project, ensure the following:
 1. **Hugging Face Setup:**  
    - Create a Hugging Face account.  
    - Obtain an API token.  
-   - Request access to the **Llama 3.1 70B Instruct model** [here](https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct).  
+   - Request access to the **Llama 3.3 70B Instruct model** [here](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct).  
 
 2. **AWS SageMaker Setup:**  
    - Ensure you have an AWS account with access to SageMaker Studio.  
