@@ -53,7 +53,8 @@ Before running this project, ensure the following:
 5. **Cost Management (VERY IMPORTANT):**  
    - At the end of your session, **run the cleanup code** provided in the notebook to delete the deployed model and endpoint.  
    - **Stop the running kernel**.  See the commented instructions at the bottom of the ipynb file.
-   - These steps are crucial to control AWS costs!!
+   - Go to Sagemaker console -> click on the Domains section that’s under Admin Configurations -> Click on the Resources tab -> you’ll see the Applications box -> stop the resource
+   - monitor your costs to ensure they don't accumulate
 
 ---
 
